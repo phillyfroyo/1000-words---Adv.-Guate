@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adventure in Guatemala - Prototype</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #fdf8f1;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    .sentence-block {
+      margin-bottom: 2rem;
+    }
+    .translation {
+      display: none;
+      margin-top: 0.5rem;
+      padding-left: 2rem;
+      color: #555;
+    }
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-size: 1.2rem;
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Adventure in Guatemala</h1>
+
+  <div class="sentence-block">
+    <button onclick="playTTS('My name is Pedro, and I live in a quiet town in Guatemala.', 'en')">🔊</button>
+    <button onclick="toggleTranslation(this)">✍</button>
+    My name is Pedro, and I live in a quiet town in Guatemala.
+    <div class="translation">
+      <button onclick="playTTS('Mi nombre es Pedro y vivo en un pueblo tranquilo de Guatemala.', 'es')">🔊</button>
+      Mi nombre es Pedro y vivo en un pueblo tranquilo de Guatemala.
+    </div>
+  </div>
+
+  <div class="sentence-block">
+    <button onclick="playTTS('One afternoon, my friend Juan came over with something in his hand. It was a map.', 'en')">🔊</button>
+    <button onclick="toggleTranslation(this)">✍</button>
+    One afternoon, my friend Juan came over with something in his hand. It was a map.
+    <div class="translation">
+      <button onclick="playTTS('Una tarde, mi amigo Juan vino con algo en la mano. Era un mapa.', 'es')">🔊</button>
+      Una tarde, mi amigo Juan vino con algo en la mano. Era un mapa.
+    </div>
+  </div>
+
+  <div class="sentence-block">
+    <button onclick="playTTS('The paper looked old, like it had been hidden for a long time.', 'en')">🔊</button>
+    <button onclick="toggleTranslation(this)">✍</button>
+    The paper looked old, like it had been hidden for a long time.
+    <div class="translation">
+      <button onclick="playTTS('El papel se veía viejo, como si hubiera estado escondido por mucho tiempo.', 'es')">🔊</button>
+      El papel se veía viejo, como si hubiera estado escondido por mucho tiempo.
+    </div>
+  </div>
+
+  <div class="sentence-block">
+    <button onclick="playTTS('Faded lines ran across it, leading into the forest.', 'en')">🔊</button>
+    <button onclick="toggleTranslation(this)">✍</button>
+    Faded lines ran across it, leading into the forest.
+    <div class="translation">
+      <button onclick="playTTS('Líneas borrosas lo cruzaban, conduciendo hacia el bosque.', 'es')">🔊</button>
+      Líneas borrosas lo cruzaban, conduciendo hacia el bosque.
+    </div>
+  </div>
+
+  <script>
+    function toggleTranslation(button) {
+      const translationDiv = button.parentElement.querySelector('.translation');
+      translationDiv.style.display = translationDiv.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function playTTS(text, lang) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = lang;
+      window.speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>
