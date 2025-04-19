@@ -22,15 +22,16 @@
       margin-bottom: 2rem;
       display: flex;
       flex-direction: row;
-      align-items: center;
+      align-items: flex-start;
       justify-content: flex-start;
     }
     .emoji-buttons {
       display: flex;
       flex-direction: row;
-      align-items: center;
+      align-items: flex-start;
       margin-right: 1rem;
       gap: 0.5rem;
+      min-width: 3rem;
     }
     .text-block {
       text-align: center;
@@ -105,7 +106,7 @@
 
   <script>
     function toggleTranslation(button) {
-      const translationDiv = button.parentElement.nextElementSibling.querySelector('.translation');
+      const translationDiv = button.closest('.sentence-block').querySelector('.translation');
       translationDiv.style.display = translationDiv.style.display === 'block' ? 'none' : 'block';
     }
 
