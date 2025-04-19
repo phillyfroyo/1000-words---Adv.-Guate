@@ -21,9 +21,14 @@
     }
     .sentence-block {
       margin-bottom: 2rem;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    .emoji-buttons {
+      margin-right: 1rem;
     }
     .text-block {
-      display: inline-block;
       text-align: left;
     }
     .translation {
@@ -36,7 +41,8 @@
       border: none;
       background: none;
       font-size: 1rem;
-      margin-right: 0.5rem;
+      margin-bottom: 0.25rem;
+      display: block;
     }
   </style>
 </head>
@@ -46,36 +52,44 @@
     <h2>Part 1</h2>
 
     <div class="sentence-block">
-      <div class="text-block">
+      <div class="emoji-buttons">
         <button onclick="playTTS('My name is Pedro, and I live in a quiet town in Guatemala.', 'en')">🔊</button>
         <button onclick="toggleTranslation(this)">✍</button>
+      </div>
+      <div class="text-block">
         My name is Pedro, and I live in a quiet town in Guatemala.
         <div class="translation">Mi nombre es Pedro y vivo en un pueblo tranquilo de Guatemala.</div>
       </div>
     </div>
 
     <div class="sentence-block">
-      <div class="text-block">
+      <div class="emoji-buttons">
         <button onclick="playTTS('One afternoon, my friend Juan came over with something in his hand. It was a map.', 'en')">🔊</button>
         <button onclick="toggleTranslation(this)">✍</button>
+      </div>
+      <div class="text-block">
         One afternoon, my friend Juan came over with something in his hand. It was a map.
         <div class="translation">Una tarde, mi amigo Juan vino con algo en la mano. Era un mapa.</div>
       </div>
     </div>
 
     <div class="sentence-block">
-      <div class="text-block">
+      <div class="emoji-buttons">
         <button onclick="playTTS('The paper looked old, like it had been hidden for a long time.', 'en')">🔊</button>
         <button onclick="toggleTranslation(this)">✍</button>
+      </div>
+      <div class="text-block">
         The paper looked old, like it had been hidden for a long time.
         <div class="translation">El papel parecía viejo, como si hubiera estado escondido por mucho tiempo.</div>
       </div>
     </div>
 
     <div class="sentence-block">
-      <div class="text-block">
+      <div class="emoji-buttons">
         <button onclick="playTTS('Faded lines ran across it, leading into the forest.', 'en')">🔊</button>
         <button onclick="toggleTranslation(this)">✍</button>
+      </div>
+      <div class="text-block">
         Faded lines ran across it, leading into the forest.
         <div class="translation">Líneas descoloridas lo cruzaban, llevaban hacia el bosque.</div>
       </div>
@@ -87,7 +101,7 @@
 
   <script>
     function toggleTranslation(button) {
-      const translationDiv = button.parentElement.querySelector('.translation');
+      const translationDiv = button.parentElement.nextElementSibling.querySelector('.translation');
       translationDiv.style.display = translationDiv.style.display === 'block' ? 'none' : 'block';
     }
 
