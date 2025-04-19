@@ -22,19 +22,21 @@
     .sentence-block {
       margin-bottom: 2rem;
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex-direction: row;
+      align-items: flex-start;
     }
     .emoji-buttons {
       display: flex;
-      justify-content: center;
-      margin-bottom: 0.5rem;
+      flex-direction: column;
+      margin-right: 0.5rem;
+      margin-top: 0.2rem;
     }
     .emoji-buttons button {
-      margin: 0 0.25rem;
+      margin: 0.25rem 0;
     }
     .text-block {
       text-align: center;
+      flex: 1;
     }
     .translation {
       display: none;
@@ -45,7 +47,7 @@
       cursor: pointer;
       border: none;
       background: none;
-      font-size: 1rem;
+      font-size: .5rem;
     }
   </style>
 </head>
@@ -97,8 +99,6 @@
         <div class="translation">Líneas descoloridas lo cruzaban, llevaban hacia el bosque.</div>
       </div>
     </div>
-
-    <!-- Additional sentence-blocks for remaining story content would go here in same format -->
 
   </div>
 
