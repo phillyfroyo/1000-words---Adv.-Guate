@@ -32,7 +32,6 @@
       margin-right: 1rem;
       gap: 0.5rem;
       min-width: 3rem;
-      padding-top: 0.15rem;
     }
     .text-block {
       text-align: center;
@@ -69,57 +68,57 @@
 
   <script>
     const sentences = [
-      "My name is Pedro, and I live in a quiet town in Guatemala.",
-      "One afternoon, my friend Juan came over with something in his hand. It was a map.",
-      "The paper looked old, like it had been hidden for a long time.",
-      "Faded lines ran across it, leading into the forest.",
-      "We studied it together, trying to understand what it meant.",
-      "Maybe it leads to something important, Juan said. I agreed.",
-      "The next morning, we packed a few things and left before the sun was high.",
-      "The road was long and hot. We passed trees, birds, and small rivers.",
-      "Most of the time, the only sounds were our steps and the wind.",
-      "Still, I felt something in the air. The forest seemed quiet—but in a different way, like it was waiting for us.",
-      "After hours of walking, we reached a cave.",
-      "From the outside, it didn’t look special.",
-      "But when I stepped inside, the air turned cold, and the light from the entrance didn’t follow me far.",
-      "The walls were covered in pictures. Some showed people, others strange shapes.",
-      "One looked like the sun and moon together. Another showed three people with something glowing around them.",
-      "I couldn’t explain it, but I felt a strong emotion. It wasn’t fear—more like a heavy feeling in my chest.",
-      "Something about the pictures felt personal, like they were part of a story I had forgotten.",
-      "As the day ended, we began to walk back. But the forest had changed.",
-      "The air was colder. The wind was louder. The trees didn’t feel the same.",
-      "Then we heard a sound behind us. Juan looked at me. We both stopped walking.",
-      "I don’t think we’re alone, he said.",
-      "From the shadows, an old man stepped out.",
-      "His face was serious, and he wore long clothes that moved in the wind.",
-      "At first, he said nothing. Then he looked at us and spoke.",
-      "You were inside the cave. We stayed silent.",
-      "He nodded. Be careful. That place holds more than pictures.",
-      "Without another word, he turned and walked away into the dark.",
-      "We stood there for a moment. I looked at Juan. He looked back at me.",
-      "Something had changed. This was only the beginning."
+      { en: "My name is Pedro, and I live in a quiet town in Guatemala.", es: "Mi nombre es Pedro, y vivo en un pueblo tranquilo de Guatemala." },
+      { en: "One afternoon, my friend Juan came over with something in his hand. It was a map.", es: "Una tarde, mi amigo Juan vino con algo en la mano. Era un mapa." },
+      { en: "The paper looked old, like it had been hidden for a long time.", es: "El papel parecía viejo, como si hubiera estado escondido por mucho tiempo." },
+      { en: "Faded lines ran across it, leading into the forest.", es: "Líneas desvanecidas lo cruzaban, conduciendo al bosque." },
+      { en: "We studied it together, trying to understand what it meant.", es: "Lo estudiamos juntos, tratando de entender qué significaba." },
+      { en: "Maybe it leads to something important, Juan said. I agreed.", es: "Tal vez lleva a algo importante, dijo Juan. Estuve de acuerdo." },
+      { en: "The next morning, we packed a few things and left before the sun was high.", es: "A la mañana siguiente, empacamos algunas cosas y salimos antes de que el sol estuviera alto." },
+      { en: "The road was long and hot. We passed trees, birds, and small rivers.", es: "El camino era largo y caluroso. Pasamos árboles, pájaros y pequeños ríos." },
+      { en: "Most of the time, the only sounds were our steps and the wind.", es: "La mayoría del tiempo, los únicos sonidos eran nuestros pasos y el viento." },
+      { en: "Still, I felt something in the air. The forest seemed quiet—but in a different way, like it was waiting for us.", es: "Aun así, sentí algo en el aire. El bosque parecía tranquilo, pero de una manera diferente, como si estuviera esperándonos." },
+      { en: "After hours of walking, we reached a cave.", es: "Después de horas de caminar, llegamos a una cueva." },
+      { en: "From the outside, it didn’t look special.", es: "Desde afuera, no parecía especial." },
+      { en: "But when I stepped inside, the air turned cold, and the light from the entrance didn’t follow me far.", es: "Pero cuando entré, el aire se volvió frío y la luz de la entrada no me siguió muy lejos." },
+      { en: "The walls were covered in pictures. Some showed people, others strange shapes.", es: "Las paredes estaban cubiertas de imágenes. Algunas mostraban personas, otras formas extrañas." },
+      { en: "One looked like the sun and moon together. Another showed three people with something glowing around them.", es: "Una parecía mostrar el sol y la luna juntos. Otra mostraba a tres personas con algo brillante a su alrededor." },
+      { en: "I couldn’t explain it, but I felt a strong emotion. It wasn’t fear—more like a heavy feeling in my chest.", es: "No podía explicarlo, pero sentí una emoción fuerte. No era miedo, más bien una sensación pesada en el pecho." },
+      { en: "Something about the pictures felt personal, like they were part of a story I had forgotten.", es: "Algo en esas imágenes se sentía personal, como si fueran parte de una historia que había olvidado." },
+      { en: "As the day ended, we began to walk back. But the forest had changed.", es: "Al final del día, comenzamos a regresar. Pero el bosque había cambiado." },
+      { en: "The air was colder. The wind was louder. The trees didn’t feel the same.", es: "El aire estaba más frío. El viento más fuerte. Los árboles no se sentían igual." },
+      { en: "Then we heard a sound behind us. Juan looked at me. We both stopped walking.", es: "Entonces escuchamos un sonido detrás de nosotros. Juan me miró. Ambos dejamos de caminar." },
+      { en: "I don’t think we’re alone, he said.", es: "No creo que estemos solos, dijo él." },
+      { en: "From the shadows, an old man stepped out.", es: "Desde las sombras, salió un anciano." },
+      { en: "His face was serious, and he wore long clothes that moved in the wind.", es: "Su rostro era serio, y llevaba ropa larga que se movía con el viento." },
+      { en: "At first, he said nothing. Then he looked at us and spoke.", es: "Al principio, no dijo nada. Luego nos miró y habló." },
+      { en: "You were inside the cave. We stayed silent.", es: "Estuvieron dentro de la cueva. Nos quedamos en silencio." },
+      { en: "He nodded. Be careful. That place holds more than pictures.", es: "Asintió. Tengan cuidado. Ese lugar guarda más que imágenes." },
+      { en: "Without another word, he turned and walked away into the dark.", es: "Sin decir nada más, se dio la vuelta y se alejó en la oscuridad." },
+      { en: "We stood there for a moment. I looked at Juan. He looked back at me.", es: "Nos quedamos allí un momento. Miré a Juan. Él me devolvió la mirada." },
+      { en: "Something had changed. This was only the beginning.", es: "Algo había cambiado. Esto era solo el comienzo." }
     ];
 
     const container = document.getElementById('story');
 
-    sentences.forEach((sentence, index) => {
+    sentences.forEach(({ en, es }) => {
       const block = document.createElement('div');
       block.className = 'sentence-block';
 
       const emojiButtons = document.createElement('div');
       emojiButtons.className = 'emoji-buttons';
       emojiButtons.innerHTML = `
-        <button onclick="playTTS(\"${sentence}\", 'en')">🔊</button>
+        <button onclick="playTTS(\"${en}\", 'en')">🔊</button>
         <button onclick="toggleTranslation(this)">✍</button>
       `;
 
       const textBlock = document.createElement('div');
       textBlock.className = 'text-block';
       const original = document.createElement('div');
-      original.textContent = sentence;
+      original.textContent = en;
       const translation = document.createElement('div');
       translation.className = 'translation';
-      translation.textContent = '[Spanish translation here]';
+      translation.textContent = es;
 
       textBlock.appendChild(original);
       textBlock.appendChild(translation);
