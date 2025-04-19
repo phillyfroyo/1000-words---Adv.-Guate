@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,10 +23,13 @@
     .sentence-block {
       margin-bottom: 2rem;
     }
+    .text-block {
+      display: inline-block;
+      text-align: left;
+    }
     .translation {
       display: none;
       margin-top: 0.5rem;
-      padding-left: 2rem;
       color: #555;
     }
     button {
@@ -42,7 +46,16 @@
     <h1>Adventure in Guatemala</h1>
     <h2>Part 1</h2>
 
-    <!-- Sentence blocks remain the same -->
+    <div class="sentence-block">
+      <button onclick="playTTS('My name is Pedro, and I live in a quiet town in Guatemala.', 'en')">🔊</button>
+      <button onclick="toggleTranslation(this)">✍</button>
+      <div class="text-block">
+        My name is Pedro, and I live in a quiet town in Guatemala.
+        <div class="translation">Mi nombre es Pedro y vivo en un pueblo tranquilo de Guatemala.</div>
+      </div>
+    </div>
+
+    <!-- [All other sentence blocks go here in same structure] -->
 
   <div class="sentence-block">
     <button onclick="playTTS('My name is Pedro, and I live in a quiet town in Guatemala.', 'en')">🔊</button>
