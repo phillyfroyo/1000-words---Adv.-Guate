@@ -17,7 +17,6 @@
     .container {
       max-width: 700px;
       margin: 0 auto;
-      text-align: center;
     }
     .sentence-block {
       margin-bottom: 2rem;
@@ -29,17 +28,19 @@
     .emoji-buttons {
       display: flex;
       flex-direction: column;
-      margin-right: 0.5rem;
-      margin-top: 0.2rem;
+      justify-content: center;
+      margin-right: 1rem;
+      margin-top: 0.25rem;
     }
     .emoji-buttons button {
       margin: 0.25rem 0;
     }
     .text-block {
       text-align: center;
-      display: inline-block;
-      padding: 0 1rem;
-      min-width: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 500px;
     }
     .translation {
       display: none;
@@ -56,8 +57,8 @@
 </head>
 <body>
   <div class="container">
-    <h1>Adventure in Guatemala</h1>
-    <h2>Part 1</h2>
+    <h1 style="text-align: center;">Adventure in Guatemala</h1>
+    <h2 style="text-align: center;">Part 1</h2>
 
     <div class="sentence-block">
       <div class="emoji-buttons">
@@ -65,7 +66,7 @@
         <button onclick="toggleTranslation(this)">✍</button>
       </div>
       <div class="text-block">
-        My name is Pedro, and I live in a quiet town in Guatemala.
+        <div>My name is Pedro, and I live in a quiet town in Guatemala.</div>
         <div class="translation">Mi nombre es Pedro y vivo en un pueblo tranquilo de Guatemala.</div>
       </div>
     </div>
@@ -76,7 +77,7 @@
         <button onclick="toggleTranslation(this)">✍</button>
       </div>
       <div class="text-block">
-        One afternoon, my friend Juan came over with something in his hand. It was a map.
+        <div>One afternoon, my friend Juan came over with something in his hand. It was a map.</div>
         <div class="translation">Una tarde, mi amigo Juan vino con algo en la mano. Era un mapa.</div>
       </div>
     </div>
@@ -87,7 +88,7 @@
         <button onclick="toggleTranslation(this)">✍</button>
       </div>
       <div class="text-block">
-        The paper looked old, like it had been hidden for a long time.
+        <div>The paper looked old, like it had been hidden for a long time.</div>
         <div class="translation">El papel parecía viejo, como si hubiera estado escondido por mucho tiempo.</div>
       </div>
     </div>
@@ -98,7 +99,7 @@
         <button onclick="toggleTranslation(this)">✍</button>
       </div>
       <div class="text-block">
-        Faded lines ran across it, leading into the forest.
+        <div>Faded lines ran across it, leading into the forest.</div>
         <div class="translation">Líneas descoloridas lo cruzaban, llevaban hacia el bosque.</div>
       </div>
     </div>
