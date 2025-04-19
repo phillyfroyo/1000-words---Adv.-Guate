@@ -13,6 +13,11 @@
       line-height: 1.6;
       color: #111;
     }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
     .sentence-block {
       margin-bottom: 2rem;
     }
@@ -32,8 +37,11 @@
   </style>
 </head>
 <body>
-  <h1>Adventure in Guatemala</h1>
-  <h2>Part 1</h2>
+  <div class="container">
+    <h1>Adventure in Guatemala</h1>
+    <h2>Part 1</h2>
+
+    <!-- Sentence blocks remain the same -->
 
   <div class="sentence-block">
     <button onclick="playTTS('My name is Pedro, and I live in a quiet town in Guatemala.', 'en')">🔊</button>
