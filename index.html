@@ -23,7 +23,8 @@
       display: flex;
       flex-direction: row;
       align-items: flex-start;
-      justify-content: flex-start;
+      justify-content: center;
+      gap: 1rem;
     }
     .emoji-buttons {
       display: flex;
@@ -31,8 +32,6 @@
       align-items: flex-start;
       justify-content: center;
       gap: 0.5rem;
-      width: 3rem;
-      margin-right: 1rem;
       opacity: 0;
       transition: opacity 0.3s ease;
     }
@@ -69,9 +68,14 @@
         opacity: 1;
       }
     }
-    .image-left {
+    .image-left-wrapper {
       flex-shrink: 0;
-      margin-right: 1.5rem;
+      display: flex;
+      align-items: flex-start;
+    }
+    .image-left {
+      width: 200px;
+      border-radius: 16px;
     }
   </style>
 </head>
@@ -156,6 +160,19 @@
         const block = document.createElement('div');
         block.className = 'sentence-block';
 
+        if (en === "My name is Pedro, and I live in a quiet town in Guatemala.") {
+          const wrapper = document.createElement('div');
+          wrapper.className = 'image-left-wrapper';
+
+          const image = document.createElement('img');
+          image.src = 'image1.pedro.png';
+          image.alt = 'Pedro';
+          image.className = 'image-left';
+
+          wrapper.appendChild(image);
+          block.appendChild(wrapper);
+        }
+
         const emojiButtons = document.createElement('div');
         emojiButtons.className = 'emoji-buttons';
         emojiButtons.innerHTML = `
@@ -173,17 +190,6 @@
 
         textBlock.appendChild(original);
         textBlock.appendChild(translation);
-
-        if (en === "My name is Pedro, and I live in a quiet town in Guatemala.") {
-          const image = document.createElement('img');
-          image.src = 'image1.pedro.png';
-          image.alt = 'Pedro';
-          image.className = 'image-left';
-          image.style.width = '200px';
-          image.style.borderRadius = '16px';
-
-          block.appendChild(image);
-        }
 
         block.appendChild(emojiButtons);
         block.appendChild(textBlock);
