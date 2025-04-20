@@ -3,209 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adventure in Guatemala - Prototype</title>
+  <title>Adventure in Guatemala - Part 1</title>
   <style>
     body {
-      font-family: sans-serif;
-      background: url('background-texture.jpg') no-repeat center center fixed;
+      font-family: Arial, sans-serif;
+      background-image: url('background.jpg');
       background-size: cover;
-      padding: 2rem;
-      line-height: 1.6;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
       color: #111;
-      font-size: 1.2rem;
+      margin: 0;
+      padding: 0;
     }
-    .container {
-      display: grid;
-      grid-template-columns: 220px 1fr 220px;
-      gap: 1rem;
-      max-width: 1200px;
-      margin: 0 auto;
+    .page-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin-top: 40px;
+      padding: 0 40px;
     }
-    .image-static {
-      width: 220px;
-      border-radius: 16px;
-      align-self: flex-start;
+    .side-column {
+      flex: 0 0 250px;
+      display: flex;
+      justify-content: center;
     }
-    .story-wrapper {
+    .side-column img {
+      width: 100%;
+      height: auto;
+    }
+    .story-container {
+      flex: 0 0 700px;
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+    .title {
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 1.5em;
+      margin-bottom: 20px;
     }
     .sentence-block {
-      margin-bottom: 2rem;
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: center;
-      gap: 1rem;
-    }
-    .emoji-buttons {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: center;
-      gap: 0.5rem;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .text-block {
+      margin: 20px auto;
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       max-width: 500px;
-      width: 100%;
-    }
-    .text-block > div {
-      width: 100%;
-    }
-    .translation {
-      display: none;
-      margin-top: 0.5rem;
-      color: #555;
-    }
-    button {
-      cursor: pointer;
-      border: none;
-      background: none;
-      font-size: 1.2rem;
-    }
-    .sentence-block:hover .emoji-buttons {
-      opacity: 1;
-    }
-    @media (hover: none) {
-      .sentence-block:hover .emoji-buttons {
-        opacity: 0;
-      }
-      .sentence-block.show-buttons .emoji-buttons {
-        opacity: 1;
-      }
-    }
-    @media (max-width: 768px) {
-      .container {
-        grid-template-columns: 1fr;
-      }
-      .image-static {
-        display: none;
-      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="image1.pedro.png" alt="Pedro" class="image-static">
-    <div class="story-wrapper">
-  <div class="text-block">
-    <h1>Adventure in Guatemala</h1>
-    <h2>Part 1</h2>
+  <div class="page-container">
+    <div class="side-column">
+      <img src="pedro-town.png" alt="Pedro in his town">
+    </div>
+
+    <div class="story-container">
+      <div class="title">Adventure in Guatemala</div>
+      <div class="subtitle">Part 1</div>
+
+      <div class="sentence-block">My name is Pedro, and I live in a quiet town in Guatemala.</div>
+      <div class="sentence-block">One afternoon, my friend Juan came over with something in his hand. It was a map.</div>
+      <div class="sentence-block">The paper looked old, like it had been hidden for a long time.</div>
+      <div class="sentence-block">Faded lines ran across it, leading into the forest.</div>
+      <div class="sentence-block">We studied it together, trying to understand what it meant.</div>
+      <div class="sentence-block">"Maybe it leads to something important," Juan said. I agreed.</div>
+      <div class="sentence-block">The next morning, we packed a few things and left before the sun was high.</div>
+      <div class="sentence-block">The road was long and hot. We passed trees, birds, and small rivers.</div>
+      <div class="sentence-block">Most of the time, the only sounds were our steps and the wind.</div>
+      <div class="sentence-block">Still, I felt something in the air. The forest seemed quiet—but in a different way, like it was waiting for us.</div>
+      <div class="sentence-block">After hours of walking, we reached a cave.</div>
+      <div class="sentence-block">From the outside, it didn’t look special.</div>
+      <div class="sentence-block">But when I stepped inside, the air turned cold, and the light from the entrance didn’t follow me far.</div>
+      <div class="sentence-block">The walls were covered in pictures. Some showed people, others strange shapes.</div>
+      <div class="sentence-block">One looked like the sun and moon together. Another showed three people with something glowing around them.</div>
+      <div class="sentence-block">I couldn’t explain it, but I felt a strong emotion. It wasn’t fear—more like a heavy feeling in my chest.</div>
+      <div class="sentence-block">Something about the pictures felt personal, like they were part of a story I had forgotten.</div>
+      <div class="sentence-block">As the day ended, we began to walk back. But the forest had changed.</div>
+      <div class="sentence-block">The air was colder. The wind was louder. The trees didn’t feel the same.</div>
+      <div class="sentence-block">Then we heard a sound behind us. Juan looked at me. We both stopped walking.</div>
+      <div class="sentence-block">"I don’t think we’re alone," he said.</div>
+      <div class="sentence-block">From the shadows, an old man stepped out.</div>
+      <div class="sentence-block">His face was serious, and he wore long clothes that moved in the wind.</div>
+      <div class="sentence-block">At first, he said nothing. Then he looked at us and spoke.</div>
+      <div class="sentence-block">"You were inside the cave." We stayed silent.</div>
+      <div class="sentence-block">He nodded. "Be careful. That place holds more than pictures."</div>
+      <div class="sentence-block">Without another word, he turned and walked away into the dark.</div>
+      <div class="sentence-block">We stood there for a moment. I looked at Juan. He looked back at me.</div>
+      <div class="sentence-block">Something had changed. This was only the beginning.</div>
+    </div>
+
+    <div class="side-column">
+      <!-- Reserved for future right-side images -->
+    </div>
   </div>
-  <div id="story"></div>
-</div>
-    <div></div> <!-- Right column placeholder -->
-  </div>
-
-  <script>
-    const sentences = [
-      { en: "My name is Pedro, and I live in a quiet town in Guatemala.", es: "Mi nombre es Pedro, y vivo en un pueblo tranquilo de Guatemala." },
-      { en: "One afternoon, my friend Juan came over with something in his hand. It was a map.", es: "Una tarde, mi amigo Juan vino con algo en la mano. Era un mapa." },
-      { en: "The paper looked old, like it had been hidden for a long time.", es: "El papel parecía viejo, como si hubiera estado escondido por mucho tiempo." },
-      { en: "Faded lines ran across it, leading into the forest.", es: "Líneas desvanecidas lo cruzaban, conduciendo al bosque." },
-      { en: "We studied it together, trying to understand what it meant.", es: "Lo estudiamos juntos, tratando de entender qué significaba." },
-      { en: "\"Maybe it leads to something important,\" Juan said. I agreed.", es: "\"Tal vez conduce a algo importante,\" dijo Juan. Yo estuve de acuerdo." },
-      { en: "The next morning, we packed a few things and left before the sun was high.", es: "A la mañana siguiente, empacamos algunas cosas y salimos antes de que el sol estuviera alto." },
-      { en: "The road was long and hot. We passed trees, birds, and small rivers.", es: "El camino era largo y caluroso. Pasamos árboles, pájaros y pequeños ríos." },
-      { en: "Most of the time, the only sounds were our steps and the wind.", es: "La mayoría del tiempo, los únicos sonidos eran nuestros pasos y el viento." },
-      { en: "Still, I felt something in the air. The forest seemed quiet—but in a different way, like it was waiting for us.", es: "Aun así, sentía algo en el aire. El bosque parecía tranquilo, pero de una manera diferente, como si estuviera esperándonos." },
-      { en: "After hours of walking, we reached a cave.", es: "Después de horas de caminar, llegamos a una cueva." },
-      { en: "From the outside, it didn’t look special.", es: "Desde afuera, no parecía especial." },
-      { en: "But when I stepped inside, the air turned cold, and the light from the entrance didn’t follow me far.", es: "Pero cuando entré, el aire se volvió frío, y la luz de la entrada no me siguió muy lejos." },
-      { en: "The walls were covered in pictures. Some showed people, others strange shapes.", es: "Las paredes estaban cubiertas de dibujos. Algunos mostraban personas, otros formas extrañas." },
-      { en: "One looked like the sun and moon together. Another showed three people with something glowing around them.", es: "Uno parecía el sol y la luna juntos. Otro mostraba a tres personas con algo brillante alrededor de ellas." },
-      { en: "I couldn’t explain it, but I felt a strong emotion. It wasn’t fear—more like a heavy feeling in my chest.", es: "No podía explicarlo, pero sentí una emoción fuerte. No era miedo, más bien una sensación de peso en el pecho." },
-      { en: "Something about the pictures felt personal, like they were part of a story I had forgotten.", es: "Algo en las imágenes se sentía personal, como si fueran parte de una historia que había olvidado." },
-      { en: "As the day ended, we began to walk back. But the forest had changed.", es: "Al terminar el día, comenzamos a regresar. Pero el bosque había cambiado." },
-      { en: "The air was colder. The wind was louder. The trees didn’t feel the same.", es: "El aire era más frío. El viento más fuerte. Los árboles no se sentían igual." },
-      { en: "Then we heard a sound behind us. Juan looked at me. We both stopped walking.", es: "Entonces escuchamos un sonido detrás de nosotros. Juan me miró. Ambos dejamos de caminar." },
-      { en: "\"I don’t think we’re alone,\" he said.", es: "\"No creo que estemos solos,\" dijo." },
-      { en: "From the shadows, an old man stepped out.", es: "Desde las sombras, un anciano salió." },
-      { en: "His face was serious, and he wore long clothes that moved in the wind.", es: "Su rostro era serio, y vestía ropas largas que se movían con el viento." },
-      { en: "At first, he said nothing. Then he looked at us and spoke.", es: "Al principio, no dijo nada. Luego nos miró y habló." },
-      { en: "\"You were inside the cave.\" We stayed silent.", es: "\"Estaban dentro de la cueva.\" Nos quedamos en silencio." },
-      { en: "He nodded. \"Be careful. That place holds more than pictures.\"", es: "Asintió. \"Tengan cuidado. Ese lugar guarda más que imágenes.\"" },
-      { en: "Without another word, he turned and walked away into the dark.", es: "Sin decir más, se dio la vuelta y se alejó en la oscuridad." },
-      { en: "We stood there for a moment. I looked at Juan. He looked back at me.", es: "Nos quedamos allí por un momento. Miré a Juan. Él me devolvió la mirada." },
-      { en: "Something had changed. This was only the beginning.", es: "Algo había cambiado. Esto era solo el comienzo." }
-    ];
-
-    const container = document.getElementById('story');
-
-    let availableVoices = [];
-
-    function loadVoices() {
-      return new Promise((resolve) => {
-        let voices = speechSynthesis.getVoices();
-        if (voices.length) {
-          resolve(voices);
-        } else {
-          speechSynthesis.onvoiceschanged = () => {
-            voices = speechSynthesis.getVoices();
-            resolve(voices);
-          };
-        }
-      });
-    }
-
-    function playTTS(text, lang) {
-      if (!window.speechSynthesis) return;
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = lang;
-      const matchedVoice = availableVoices.find(voice => voice.lang.startsWith(lang));
-      if (matchedVoice) utterance.voice = matchedVoice;
-      speechSynthesis.cancel();
-      speechSynthesis.speak(utterance);
-    }
-
-    function toggleTranslation(button) {
-      const translationDiv = button.closest('.sentence-block').querySelector('.translation');
-      translationDiv.style.display = translationDiv.style.display === 'block' ? 'none' : 'block';
-    }
-
-    loadVoices().then((voices) => {
-      availableVoices = voices;
-      sentences.forEach(({ en, es }) => {
-        const block = document.createElement('div');
-        block.className = 'sentence-block';
-
-        const emojiButtons = document.createElement('div');
-        emojiButtons.className = 'emoji-buttons';
-        emojiButtons.innerHTML = `
-          <button onclick="playTTS('${en.replace(/'/g, "\\'")}', 'en')">🔊</button>
-          <button onclick="toggleTranslation(this)">✍</button>
-        `;
-
-        const textBlock = document.createElement('div');
-        textBlock.className = 'text-block';
-        const original = document.createElement('div');
-        original.textContent = en;
-        const translation = document.createElement('div');
-        translation.className = 'translation';
-        translation.textContent = es;
-
-        textBlock.appendChild(original);
-        textBlock.appendChild(translation);
-
-        block.appendChild(emojiButtons);
-        block.appendChild(textBlock);
-
-        block.addEventListener('click', () => {
-          if (window.matchMedia('(hover: none)').matches) {
-            block.classList.toggle('show-buttons');
-          }
-        });
-
-        container.appendChild(block);
-      });
-    });
-  </script>
 </body>
 </html>
