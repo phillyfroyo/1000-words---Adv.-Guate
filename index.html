@@ -17,6 +17,7 @@
     .container {
       max-width: 900px;
       margin: 0 auto;
+      position: relative;
     }
     .sentence-block {
       margin-bottom: 2rem;
@@ -69,22 +70,30 @@
       }
     }
     .image-left-wrapper {
-      flex-shrink: 0;
-      display: flex;
-      align-items: flex-start;
+      position: absolute;
+      top: 200px;
+      left: 2rem;
+      z-index: 0;
     }
     .image-left {
-      width: 200px;
+      width: 220px;
       border-radius: 16px;
+      opacity: 0.95;
+    }
+    @media (max-width: 768px) {
+      .image-left-wrapper {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <div class="image-left-wrapper">
+      <img src="image1.pedro.png" alt="Pedro" class="image-left">
+    </div>
     <h1 style="text-align: center;">Adventure in Guatemala</h1>
     <h2 style="text-align: center;">Part 1</h2>
-
-    <!-- SENTENCE BLOCKS START -->
     <div id="story"></div>
   </div>
 
@@ -159,19 +168,6 @@
       sentences.forEach(({ en, es }) => {
         const block = document.createElement('div');
         block.className = 'sentence-block';
-
-        if (en === "My name is Pedro, and I live in a quiet town in Guatemala.") {
-          const wrapper = document.createElement('div');
-          wrapper.className = 'image-left-wrapper';
-
-          const image = document.createElement('img');
-          image.src = 'image1.pedro.png';
-          image.alt = 'Pedro';
-          image.className = 'image-left';
-
-          wrapper.appendChild(image);
-          block.appendChild(wrapper);
-        }
 
         const emojiButtons = document.createElement('div');
         emojiButtons.className = 'emoji-buttons';
