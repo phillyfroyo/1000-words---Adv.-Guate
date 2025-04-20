@@ -18,6 +18,18 @@
     .container {
       max-width: 900px;
       margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+    }
+    .image-static {
+      width: 220px;
+      border-radius: 16px;
+      margin-right: 2rem;
+      flex-shrink: 0;
+      align-self: flex-start;
+    }
+    .story-wrapper {
+      flex: 1;
     }
     .sentence-block {
       margin-bottom: 2rem;
@@ -69,32 +81,21 @@
         opacity: 1;
       }
     }
-    .image-left-wrapper {
-      position: fixed;
-      top: 180px;
-      left: 20px;
-      z-index: -1;
-    }
-    .image-left {
-      width: 220px;
-      border-radius: 16px;
-      opacity: 0.95;
-    }
     @media (max-width: 768px) {
-      .image-left-wrapper {
+      .image-static {
         display: none;
       }
     }
   </style>
 </head>
 <body>
-  <div class="image-left-wrapper">
-    <img src="image1.pedro.png" alt="Pedro" class="image-left">
-  </div>
   <div class="container">
-    <h1 style="text-align: center;">Adventure in Guatemala</h1>
-    <h2 style="text-align: center;">Part 1</h2>
-    <div id="story"></div>
+    <img src="image1.pedro.png" alt="Pedro" class="image-static">
+    <div class="story-wrapper">
+      <h1 style="text-align: center;">Adventure in Guatemala</h1>
+      <h2 style="text-align: center;">Part 1</h2>
+      <div id="story"></div>
+    </div>
   </div>
 
   <script>
