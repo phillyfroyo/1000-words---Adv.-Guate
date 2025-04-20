@@ -58,8 +58,16 @@
       background: none;
       font-size: 1.2rem;
     }
-    .sentence-block.show-buttons .emoji-buttons {
+    .sentence-block:hover .emoji-buttons {
       opacity: 1;
+    }
+    @media (hover: none) {
+      .sentence-block:hover .emoji-buttons {
+        opacity: 0;
+      }
+      .sentence-block.show-buttons .emoji-buttons {
+        opacity: 1;
+      }
     }
   </style>
 </head>
@@ -167,7 +175,9 @@
 
         // Mobile tap behavior
         block.addEventListener('click', () => {
-          block.classList.toggle('show-buttons');
+          if (window.matchMedia('(hover: none)').matches) {
+            block.classList.toggle('show-buttons');
+          }
         });
 
         container.appendChild(block);
