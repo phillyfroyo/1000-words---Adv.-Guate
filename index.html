@@ -15,7 +15,7 @@
       font-size: 1.2rem;
     }
     .container {
-      max-width: 700px;
+      max-width: 900px;
       margin: 0 auto;
     }
     .sentence-block {
@@ -68,6 +68,10 @@
       .sentence-block.show-buttons .emoji-buttons {
         opacity: 1;
       }
+    }
+    .image-left {
+      flex-shrink: 0;
+      margin-right: 1.5rem;
     }
   </style>
 </head>
@@ -174,23 +178,15 @@
           const image = document.createElement('img');
           image.src = 'image1.pedro.png';
           image.alt = 'Pedro';
-          image.style.width = '150px';
-          image.style.height = 'auto';
-          image.style.marginRight = '1rem';
-          image.style.borderRadius = '12px';
+          image.className = 'image-left';
+          image.style.width = '200px';
+          image.style.borderRadius = '16px';
 
-          const contentFlex = document.createElement('div');
-          contentFlex.style.display = 'flex';
-          contentFlex.style.alignItems = 'flex-start';
-          contentFlex.appendChild(image);
-          contentFlex.appendChild(textBlock);
-
-          block.appendChild(emojiButtons);
-          block.appendChild(contentFlex);
-        } else {
-          block.appendChild(emojiButtons);
-          block.appendChild(textBlock);
+          block.appendChild(image);
         }
+
+        block.appendChild(emojiButtons);
+        block.appendChild(textBlock);
 
         block.addEventListener('click', () => {
           if (window.matchMedia('(hover: none)').matches) {
