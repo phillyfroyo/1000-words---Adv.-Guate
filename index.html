@@ -170,8 +170,27 @@
         textBlock.appendChild(original);
         textBlock.appendChild(translation);
 
-        block.appendChild(emojiButtons);
-        block.appendChild(textBlock);
+        if (en === "My name is Pedro, and I live in a quiet town in Guatemala.") {
+          const image = document.createElement('img');
+          image.src = 'image1.pedro.png';
+          image.alt = 'Pedro';
+          image.style.width = '150px';
+          image.style.height = 'auto';
+          image.style.marginRight = '1rem';
+          image.style.borderRadius = '12px';
+
+          const contentFlex = document.createElement('div');
+          contentFlex.style.display = 'flex';
+          contentFlex.style.alignItems = 'flex-start';
+          contentFlex.appendChild(image);
+          contentFlex.appendChild(textBlock);
+
+          block.appendChild(emojiButtons);
+          block.appendChild(contentFlex);
+        } else {
+          block.appendChild(emojiButtons);
+          block.appendChild(textBlock);
+        }
 
         block.addEventListener('click', () => {
           if (window.matchMedia('(hover: none)').matches) {
