@@ -52,53 +52,67 @@
       margin: 20px auto;
       text-align: center;
       max-width: 500px;
+      position: relative;
+    }
+    .emoji-buttons {
+      position: absolute;
+      left: -40px;
+      top: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .sentence-block:hover .emoji-buttons {
+      opacity: 1;
+    }
+    .emoji-buttons span {
+      display: inline-block;
+      margin: 0 2px;
+      cursor: pointer;
+    }
+    .translation {
+      display: none;
+      font-style: italic;
+      color: #444;
+      margin-top: 8px;
     }
   </style>
 </head>
 <body>
   <div class="page-container">
     <div class="side-column">
-      <img src="pedro-town.png" alt="Pedro in his town">
+      <img src="image1.pedro.png" alt="Pedro in his town">
     </div>
 
     <div class="story-container">
       <div class="title">Adventure in Guatemala</div>
       <div class="subtitle">Part 1</div>
 
-      <div class="sentence-block">My name is Pedro, and I live in a quiet town in Guatemala.</div>
-      <div class="sentence-block">One afternoon, my friend Juan came over with something in his hand. It was a map.</div>
-      <div class="sentence-block">The paper looked old, like it had been hidden for a long time.</div>
-      <div class="sentence-block">Faded lines ran across it, leading into the forest.</div>
-      <div class="sentence-block">We studied it together, trying to understand what it meant.</div>
-      <div class="sentence-block">"Maybe it leads to something important," Juan said. I agreed.</div>
-      <div class="sentence-block">The next morning, we packed a few things and left before the sun was high.</div>
-      <div class="sentence-block">The road was long and hot. We passed trees, birds, and small rivers.</div>
-      <div class="sentence-block">Most of the time, the only sounds were our steps and the wind.</div>
-      <div class="sentence-block">Still, I felt something in the air. The forest seemed quiet—but in a different way, like it was waiting for us.</div>
-      <div class="sentence-block">After hours of walking, we reached a cave.</div>
-      <div class="sentence-block">From the outside, it didn’t look special.</div>
-      <div class="sentence-block">But when I stepped inside, the air turned cold, and the light from the entrance didn’t follow me far.</div>
-      <div class="sentence-block">The walls were covered in pictures. Some showed people, others strange shapes.</div>
-      <div class="sentence-block">One looked like the sun and moon together. Another showed three people with something glowing around them.</div>
-      <div class="sentence-block">I couldn’t explain it, but I felt a strong emotion. It wasn’t fear—more like a heavy feeling in my chest.</div>
-      <div class="sentence-block">Something about the pictures felt personal, like they were part of a story I had forgotten.</div>
-      <div class="sentence-block">As the day ended, we began to walk back. But the forest had changed.</div>
-      <div class="sentence-block">The air was colder. The wind was louder. The trees didn’t feel the same.</div>
-      <div class="sentence-block">Then we heard a sound behind us. Juan looked at me. We both stopped walking.</div>
-      <div class="sentence-block">"I don’t think we’re alone," he said.</div>
-      <div class="sentence-block">From the shadows, an old man stepped out.</div>
-      <div class="sentence-block">His face was serious, and he wore long clothes that moved in the wind.</div>
-      <div class="sentence-block">At first, he said nothing. Then he looked at us and spoke.</div>
-      <div class="sentence-block">"You were inside the cave." We stayed silent.</div>
-      <div class="sentence-block">He nodded. "Be careful. That place holds more than pictures."</div>
-      <div class="sentence-block">Without another word, he turned and walked away into the dark.</div>
-      <div class="sentence-block">We stood there for a moment. I looked at Juan. He looked back at me.</div>
-      <div class="sentence-block">Something had changed. This was only the beginning.</div>
+      <div class="sentence-block">
+        <div class="emoji-buttons">
+          <span onclick="speak('My name is Pedro, and I live in a quiet town in Guatemala.')">🔊</span>
+          <span onclick="toggleTranslation(this)">✍️</span>
+        </div>
+        My name is Pedro, and I live in a quiet town in Guatemala.
+        <div class="translation">Mi nombre es Pedro y vivo en un pueblo tranquilo de Guatemala.</div>
+      </div>
+      <!-- Additional sentence-blocks go here, same structure -->
     </div>
 
     <div class="side-column">
       <!-- Reserved for future right-side images -->
     </div>
   </div>
+
+  <script>
+    function speak(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      speechSynthesis.speak(utterance);
+    }
+    function toggleTranslation(el) {
+      const block = el.closest('.sentence-block');
+      const translation = block.querySelector('.translation');
+      translation.style.display = translation.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
 </body>
 </html>
